@@ -14,34 +14,21 @@
 
 """This script is used to synthesize generated parts of this library."""
 
-import subprocess
-import synthtool as s
-import synthtool.gcp as gcp
 import logging
+from pathlib import Path
+import subprocess
 
-AUTOSYNTH_MULTIPLE_COMMITS = True
+import synthtool as s
+from synthtool.languages import php
 
 logging.basicConfig(level=logging.DEBUG)
 
-gapic = gcp.GAPICBazel()
-common = gcp.CommonTemplates()
+src = Path(f"../{php.STAGING_DIR}/BigQueryStorage").resolve()
+dest = Path().resolve()
 
-library = gapic.php_library(
-    service='bigquery-storage',
-    version='v1',
-    proto_path='google/cloud/bigquery/storage/v1',
-    bazel_target='//google/cloud/bigquery/storage/v1:google-cloud-bigquery-storage-v1-php',
-)
+php.owlbot_main(src=src, dest=dest)
 
-# copy all src including partial veneer classes
-s.move(library / 'src')
 
-# copy proto files to src also
-s.move(library / 'proto/src/Google/Cloud/BigQuery/Storage', 'src/')
-s.move(library / 'tests/')
-
-# copy GPBMetadata file to metadata
-s.move(library / 'proto/src/GPBMetadata/Google/Cloud/Bigquery/Storage', 'metadata/')
 
 # document and utilize apiEndpoint instead of serviceAddress
 s.replace(
@@ -66,16 +53,6 @@ s.replace(
     'src/V1/**/*Client.php',
     r'^(\s+\*\n)?\s+\*\s@experimental\n',
     '')
-
-# fix year
-s.replace(
-    'src/**/**/*.php',
-    r'Copyright \d{4}',
-    r'Copyright 2020')
-s.replace(
-    'tests/**/**/*Test.php',
-    r'Copyright \d{4}',
-    r'Copyright 2020')
 
 # Change the wording for the deprecation warning.
 s.replace(
