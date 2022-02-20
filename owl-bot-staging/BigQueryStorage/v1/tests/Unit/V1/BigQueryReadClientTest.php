@@ -84,10 +84,12 @@ class BigQueryReadClientTest extends GeneratedTest
         $name = 'name3373707';
         $table = 'table110115790';
         $estimatedTotalBytesScanned = 452788190;
+        $traceId = 'traceId1270300245';
         $expectedResponse = new ReadSession();
         $expectedResponse->setName($name);
         $expectedResponse->setTable($table);
         $expectedResponse->setEstimatedTotalBytesScanned($estimatedTotalBytesScanned);
+        $expectedResponse->setTraceId($traceId);
         $transport->addResponse($expectedResponse);
         // Mock request
         $formattedParent = $client->projectName('[PROJECT]');

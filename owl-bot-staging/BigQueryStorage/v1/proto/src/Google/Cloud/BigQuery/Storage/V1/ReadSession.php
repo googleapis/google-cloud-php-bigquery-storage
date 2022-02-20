@@ -73,6 +73,16 @@ class ReadSession extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>int64 estimated_total_bytes_scanned = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $estimated_total_bytes_scanned = 0;
+    /**
+     * Optional. ID set by client to annotate a session identity.  This does not need
+     * to be strictly unique, but instead the same ID should be used to group
+     * logically connected sessions (e.g. All using the same ID for all sessions
+     * needed to complete a Spark SQL query is reasonable).
+     * Maximum length is 256 bytes.
+     *
+     * Generated from protobuf field <code>string trace_id = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    protected $trace_id = '';
     protected $schema;
 
     /**
@@ -111,6 +121,12 @@ class ReadSession extends \Google\Protobuf\Internal\Message
      *           Output only. An estimate on the number of bytes this session will scan when
      *           all streams are completely consumed. This estimate is based on
      *           metadata from the table which might be incomplete or stale.
+     *     @type string $trace_id
+     *           Optional. ID set by client to annotate a session identity.  This does not need
+     *           to be strictly unique, but instead the same ID should be used to group
+     *           logically connected sessions (e.g. All using the same ID for all sessions
+     *           needed to complete a Spark SQL query is reasonable).
+     *           Maximum length is 256 bytes.
      * }
      */
     public function __construct($data = NULL) {
@@ -434,6 +450,40 @@ class ReadSession extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt64($var);
         $this->estimated_total_bytes_scanned = $var;
+
+        return $this;
+    }
+
+    /**
+     * Optional. ID set by client to annotate a session identity.  This does not need
+     * to be strictly unique, but instead the same ID should be used to group
+     * logically connected sessions (e.g. All using the same ID for all sessions
+     * needed to complete a Spark SQL query is reasonable).
+     * Maximum length is 256 bytes.
+     *
+     * Generated from protobuf field <code>string trace_id = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return string
+     */
+    public function getTraceId()
+    {
+        return $this->trace_id;
+    }
+
+    /**
+     * Optional. ID set by client to annotate a session identity.  This does not need
+     * to be strictly unique, but instead the same ID should be used to group
+     * logically connected sessions (e.g. All using the same ID for all sessions
+     * needed to complete a Spark SQL query is reasonable).
+     * Maximum length is 256 bytes.
+     *
+     * Generated from protobuf field <code>string trace_id = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTraceId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->trace_id = $var;
 
         return $this;
     }
