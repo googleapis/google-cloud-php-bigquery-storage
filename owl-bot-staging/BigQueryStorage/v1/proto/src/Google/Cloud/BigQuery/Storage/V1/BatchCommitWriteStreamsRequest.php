@@ -19,7 +19,7 @@ class BatchCommitWriteStreamsRequest extends \Google\Protobuf\Internal\Message
      * Required. Parent table that all the streams should belong to, in the form of
      * `projects/{project}/datasets/{dataset}/tables/{table}`.
      *
-     * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
     protected $parent = '';
     /**
@@ -51,7 +51,7 @@ class BatchCommitWriteStreamsRequest extends \Google\Protobuf\Internal\Message
      * Required. Parent table that all the streams should belong to, in the form of
      * `projects/{project}/datasets/{dataset}/tables/{table}`.
      *
-     * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getParent()
@@ -63,7 +63,7 @@ class BatchCommitWriteStreamsRequest extends \Google\Protobuf\Internal\Message
      * Required. Parent table that all the streams should belong to, in the form of
      * `projects/{project}/datasets/{dataset}/tables/{table}`.
      *
-     * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */

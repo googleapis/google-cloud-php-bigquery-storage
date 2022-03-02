@@ -24,9 +24,9 @@ class AppendRowsRequest extends \Google\Protobuf\Internal\Message
      * If provided for subsequent requests, it must match the value of the first
      * request.
      * For explicitly created write streams, the format is:
-     * `projects/{project}/datasets/{dataset}/tables/{table}/streams/{id}`
+     * * `projects/{project}/datasets/{dataset}/tables/{table}/streams/{id}`
      * For the special default stream, the format is:
-     * `projects/{project}/datasets/{dataset}/tables/{table}/_default`.
+     * * `projects/{project}/datasets/{dataset}/tables/{table}/streams/_default`.
      *
      * Generated from protobuf field <code>string write_stream = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
@@ -61,9 +61,9 @@ class AppendRowsRequest extends \Google\Protobuf\Internal\Message
      *           If provided for subsequent requests, it must match the value of the first
      *           request.
      *           For explicitly created write streams, the format is:
-     *           `projects/{project}/datasets/{dataset}/tables/{table}/streams/{id}`
+     *           * `projects/{project}/datasets/{dataset}/tables/{table}/streams/{id}`
      *           For the special default stream, the format is:
-     *           `projects/{project}/datasets/{dataset}/tables/{table}/_default`.
+     *           * `projects/{project}/datasets/{dataset}/tables/{table}/streams/_default`.
      *     @type \Google\Protobuf\Int64Value $offset
      *           If present, the write is only performed if the next append offset is same
      *           as the provided value. If not present, the write is performed at the
@@ -87,9 +87,9 @@ class AppendRowsRequest extends \Google\Protobuf\Internal\Message
      * If provided for subsequent requests, it must match the value of the first
      * request.
      * For explicitly created write streams, the format is:
-     * `projects/{project}/datasets/{dataset}/tables/{table}/streams/{id}`
+     * * `projects/{project}/datasets/{dataset}/tables/{table}/streams/{id}`
      * For the special default stream, the format is:
-     * `projects/{project}/datasets/{dataset}/tables/{table}/_default`.
+     * * `projects/{project}/datasets/{dataset}/tables/{table}/streams/_default`.
      *
      * Generated from protobuf field <code>string write_stream = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
@@ -105,9 +105,9 @@ class AppendRowsRequest extends \Google\Protobuf\Internal\Message
      * If provided for subsequent requests, it must match the value of the first
      * request.
      * For explicitly created write streams, the format is:
-     * `projects/{project}/datasets/{dataset}/tables/{table}/streams/{id}`
+     * * `projects/{project}/datasets/{dataset}/tables/{table}/streams/{id}`
      * For the special default stream, the format is:
-     * `projects/{project}/datasets/{dataset}/tables/{table}/_default`.
+     * * `projects/{project}/datasets/{dataset}/tables/{table}/streams/_default`.
      *
      * Generated from protobuf field <code>string write_stream = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var

@@ -65,6 +65,18 @@ class StorageErrorCode
      * Generated from protobuf enum <code>SCHEMA_MISMATCH_EXTRA_FIELDS = 7;</code>
      */
     const SCHEMA_MISMATCH_EXTRA_FIELDS = 7;
+    /**
+     * Offset already exists.
+     *
+     * Generated from protobuf enum <code>OFFSET_ALREADY_EXISTS = 8;</code>
+     */
+    const OFFSET_ALREADY_EXISTS = 8;
+    /**
+     * Offset out of range.
+     *
+     * Generated from protobuf enum <code>OFFSET_OUT_OF_RANGE = 9;</code>
+     */
+    const OFFSET_OUT_OF_RANGE = 9;
 
     private static $valueToName = [
         self::STORAGE_ERROR_CODE_UNSPECIFIED => 'STORAGE_ERROR_CODE_UNSPECIFIED',
@@ -75,6 +87,8 @@ class StorageErrorCode
         self::INVALID_STREAM_STATE => 'INVALID_STREAM_STATE',
         self::STREAM_FINALIZED => 'STREAM_FINALIZED',
         self::SCHEMA_MISMATCH_EXTRA_FIELDS => 'SCHEMA_MISMATCH_EXTRA_FIELDS',
+        self::OFFSET_ALREADY_EXISTS => 'OFFSET_ALREADY_EXISTS',
+        self::OFFSET_OUT_OF_RANGE => 'OFFSET_OUT_OF_RANGE',
     ];
 
     public static function name($value)

@@ -2,7 +2,7 @@
 // GENERATED CODE -- DO NOT EDIT!
 
 // Original file comments:
-// Copyright 2021 Google LLC
+// Copyright 2022 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -89,6 +89,13 @@ class BigQueryWriteGrpcClient extends \Grpc\BaseStub {
      * * For PENDING streams, data is not made visible until the stream itself is
      * finalized (via the `FinalizeWriteStream` rpc), and the stream is explicitly
      * committed via the `BatchCommitWriteStreams` rpc.
+     *
+     * Note: For users coding against the gRPC api directly, it may be
+     * necessary to supply the x-goog-request-params system parameter
+     * with `write_stream=<full_write_stream_name>`.
+     *
+     * More information about system parameters:
+     * https://cloud.google.com/apis/docs/system-parameters
      * @param array $metadata metadata
      * @param array $options call options
      * @return \Grpc\BidiStreamingCall

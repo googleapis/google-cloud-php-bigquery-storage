@@ -186,9 +186,9 @@ class BigQueryWriteClientTest extends GeneratedTest
         $expectedResponse = new BatchCommitWriteStreamsResponse();
         $transport->addResponse($expectedResponse);
         // Mock request
-        $parent = 'parent-995424086';
+        $formattedParent = $client->tableName('[PROJECT]', '[DATASET]', '[TABLE]');
         $writeStreams = [];
-        $response = $client->batchCommitWriteStreams($parent, $writeStreams);
+        $response = $client->batchCommitWriteStreams($formattedParent, $writeStreams);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -196,7 +196,7 @@ class BigQueryWriteClientTest extends GeneratedTest
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.cloud.bigquery.storage.v1.BigQueryWrite/BatchCommitWriteStreams', $actualFuncCall);
         $actualValue = $actualRequestObject->getParent();
-        $this->assertProtobufEquals($parent, $actualValue);
+        $this->assertProtobufEquals($formattedParent, $actualValue);
         $actualValue = $actualRequestObject->getWriteStreams();
         $this->assertProtobufEquals($writeStreams, $actualValue);
         $this->assertTrue($transport->isExhausted());
@@ -223,10 +223,10 @@ class BigQueryWriteClientTest extends GeneratedTest
         ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
         // Mock request
-        $parent = 'parent-995424086';
+        $formattedParent = $client->tableName('[PROJECT]', '[DATASET]', '[TABLE]');
         $writeStreams = [];
         try {
-            $client->batchCommitWriteStreams($parent, $writeStreams);
+            $client->batchCommitWriteStreams($formattedParent, $writeStreams);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
