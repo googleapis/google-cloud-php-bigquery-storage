@@ -16,14 +16,14 @@ class Avro
         }
         $pool->internalAddGeneratedFile(
             '
-ù
+ý
 +google/cloud/bigquery/storage/v1/avro.proto google.cloud.bigquery.storage.v1"
 
 AvroSchema
-schema (	"=
+schema (	"A
 AvroRows
-serialized_binary_rows (
-	row_count (BÂ
+serialized_binary_rows (
+	row_count (BBÂ
 $com.google.cloud.bigquery.storage.v1B	AvroProtoPZGgoogle.golang.org/genproto/googleapis/cloud/bigquery/storage/v1;storageª Google.Cloud.BigQuery.Storage.V1Ê Google\\Cloud\\BigQuery\\Storage\\V1bproto3'
         , true);
 
